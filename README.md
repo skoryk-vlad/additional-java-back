@@ -1,9 +1,5 @@
 ## Project Setup
 
-```sh
-npm install
-```
-
 Create `additional-java-1.0-SNAPSHOT.jar` file using Maven
 
 And then run:
