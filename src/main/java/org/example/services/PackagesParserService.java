@@ -13,13 +13,13 @@ import java.io.IOException;
 
 @Service
 public class PackagesParserService {
-    private final String url = "https://www.npmjs.com/package/";
+    private static final String URL = "https://www.npmjs.com/package/";
 
     public NpmPackage parseByName(String name) {
         NpmPackage npmPackage = new NpmPackage();
 
         try {
-            Document doc = Jsoup.connect(url + name).get();
+            Document doc = Jsoup.connect(URL + name).get();
 
             Elements nameElement = doc.getElementsByAttributeValue("class", "_50685029 truncate");
             npmPackage.setName(nameElement.text());
