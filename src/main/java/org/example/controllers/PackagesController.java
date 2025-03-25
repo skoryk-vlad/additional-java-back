@@ -33,12 +33,11 @@ public class PackagesController {
 
     @PostMapping
     public NpmPackage add(@RequestBody AddPackageDto addPackageDto) {
-        System.out.println(addPackageDto);
         return packagesService.add(addPackageDto.getName());
     }
 
     @GetMapping("/excel")
-    public void exportToExcel(HttpServletResponse response) throws IOException {
+    public void exportToExcel(HttpServletResponse response) {
         response.setContentType("application/octet-stream");
         DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
         String currentDateTime = dateFormatter.format(new Date());
