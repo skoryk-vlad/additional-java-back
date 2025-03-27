@@ -1,11 +1,26 @@
 package org.example.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class NpmPackage {
-    private Number id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotNull
     private String name;
-    private Number weeklyDownloads;
+
+    private Long weeklyDownloads;
+
     private String version;
+
     private String size;
+
     private String lastPublish;
 
     public NpmPackage() {
@@ -19,11 +34,11 @@ public class NpmPackage {
         this.name = name;
     }
 
-    public Number getWeeklyDownloads() {
+    public Long getWeeklyDownloads() {
         return weeklyDownloads;
     }
 
-    public void setWeeklyDownloads(Number weeklyDownloads) {
+    public void setWeeklyDownloads(Long weeklyDownloads) {
         this.weeklyDownloads = weeklyDownloads;
     }
 
@@ -51,11 +66,11 @@ public class NpmPackage {
         this.lastPublish = lastPublish;
     }
 
-    public Number getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Number id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }

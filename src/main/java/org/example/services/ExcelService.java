@@ -38,8 +38,8 @@ public class ExcelService {
     private void createCell(XSSFSheet sheet, Row row, int columnCount, Object value, CellStyle style) {
         sheet.autoSizeColumn(columnCount);
         Cell cell = row.createCell(columnCount);
-        if (value instanceof Integer) {
-            cell.setCellValue((Integer) value);
+        if (value instanceof Long) {
+            cell.setCellValue((Long) value);
         } else if (value instanceof Boolean) {
             cell.setCellValue((Boolean) value);
         } else {
@@ -58,7 +58,7 @@ public class ExcelService {
         font.setFontHeight(14);
         style.setFont(font);
 
-        for (NpmPackage npmPackage: packages) {
+        for (NpmPackage npmPackage : packages) {
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
 

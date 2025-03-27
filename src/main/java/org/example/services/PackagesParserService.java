@@ -43,7 +43,7 @@ public class PackagesParserService {
                 if (blockName.trim().equalsIgnoreCase("DownloadsWeekly Downloads")) {
                     String weeklyDownloads = element.getElementsByAttributeValue("class", "_9ba9a726 f4 tl flex-auto fw6 black-80 ma0 pr2 pb1").text();
                     String onlyNumbers = weeklyDownloads.replaceAll("[^0-9]", "");
-                    npmPackage.setWeeklyDownloads(Integer.parseInt(onlyNumbers));
+                    npmPackage.setWeeklyDownloads(Long.parseLong(onlyNumbers));
                 }
             }
         } catch (HttpStatusException e) {

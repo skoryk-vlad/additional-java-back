@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -27,8 +27,8 @@ public class PackagesController {
     }
 
     @GetMapping("/{id}")
-    public NpmPackage getById(@PathVariable("id") String id) {
-        return packagesService.getById(Integer.parseInt(id));
+    public Optional<NpmPackage> getById(@PathVariable("id") String id) {
+        return packagesService.getById(Long.parseLong(id));
     }
 
     @PostMapping

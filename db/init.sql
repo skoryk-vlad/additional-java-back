@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS `java_local`;
+
+CREATE TABLE IF NOT EXISTS npm_package (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    weekly_downloads INT,
+    version VARCHAR(255),
+    size VARCHAR(255),
+    last_publish VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
